@@ -1,0 +1,16 @@
+USE employeesDB;
+INSERT INTO department ('name') VALUES ('Owner');
+INSERT INTO department ('name') VALUES ('Chef');
+INSERT INTO department ('name') VALUES ('Waiter');
+INSERT INTO role (title, salary, department_id) VALUES ('Boss', 800000, 1);
+INSERT INTO role (title, salary, department_id) VALUES ('Cooker', 600000, 2);
+INSERT INTO role (title, salary, department_id) VALUES ('Server', 400000, 3);
+INSERT INTO role (title, salary, department_id) VALUES ('Dish Washer', 30000, 4);
+INSERT INTO role (title, salary, department_id) VALUES ('Cleaner', 20000, 5);
+INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES ('Tom', 'Johnson', 2, 1);
+INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES ('Nick', 'Hutchings', 3, 5);
+INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES ('Ashley', 'Smith', 2, 4);
+INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES ('Jake', 'Hansen', 3, 4);
+INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES ('Sarah', 'Cross', 2, NULL);
+INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES ('Mitch', 'Kreeg', 2, NULL);
+INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES ('Taylor', 'Brock', 1, 4);
