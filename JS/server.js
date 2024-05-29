@@ -1,9 +1,19 @@
-const mysql = require('mysql');
+const pg = require('pg');
+const { Pool, Client } = pg
 const inquirer = require('inquirer');
 const consoleTables = require('console.table');
 var managers = [];
 var roles = [];
 var employees = [];
+
+const pool = new Pool({
+    user: 'postgres',
+    password:'BelleandKoa',
+    host: 'localhost',
+    port: 5432,
+    database: employeesDB
+})
+
 
 const connection = mysql.createConnection({
   host: 'localhost',
