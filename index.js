@@ -1,11 +1,21 @@
-const mysql = require('mysql');
+require('dotenv').config();
 const fs = require('fs');
 const { exit } = require('process');
+const { Pool } = require('pg');
 
 const seedQuery = fs.readFileSync('./sql/seed.sql', {
     encoding:'utf-8'
 });
 
+const postgres = new Pool(
+    {
+        user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        host: "localhost",
+        database: process.env.DB_NAME,
+
+    }
+)
 
 
 const connectionProperties = {
