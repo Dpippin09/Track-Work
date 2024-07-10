@@ -5,5 +5,13 @@
   },
   "scripts": {
     "start": "node index.js"
-  }
+  },
+  "name": "track-work",
+  "description": "An employee tracking system Come check out this awesome new EMPLOYEE TRACKING PROGRAM!  Keep track of all your employees with ease!",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
