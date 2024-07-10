@@ -1,20 +1,9 @@
 {
-  "name": "track-work",
-  "version": "1.0.0",
-  "description": "An employee tracking system",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js",
-    "seed": "psql -U postgres -f db"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.4.5",
     "inquirer": "^8.2.4",
     "pg": "^8.11.5"
+  },
+  "scripts": {
+    "start": "node index.js"
   }
 }

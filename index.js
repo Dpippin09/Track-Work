@@ -1,42 +1,16 @@
-require('dotenv').config();
-const fs = require('fs');
-const { exit } = require('process');
-const { Pool } = require('pg');
+// Import the mainMenu function from the inquirer module
+const { mainMenu } = require('./src/utils/inquirer');
 
-const seedQuery = fs.readFileSync('./sql/seed.sql', {
-    encoding:'utf-8'
-});
-
-const postgres = new Pool(
-    {
-        user: process.env.DB_USER,
-        password: process.env.DB_PASSWORD,
-        host: "localhost",
-        database: process.env.DB_NAME,
-
-    }
-)
-
-
-const connectionProperties = {
-    host: 'localhost',
-    port: 3001,
-    user: 'root',
-    password: 'password',
-    database: 'employeesDB'
+// Define an asynchronous function to run the application
+async function run() {
+  try {
+    // Call the mainMenu function and wait for it to complete
+    await mainMenu();
+  } catch (error) {
+    // If an error occurs, log it to the console
+    console.error('An error occurred:', error);
+  }
 }
 
-
-const connection = msql.createconnection(connectionProperties);
-
-connection.connect();
-
-console.log('Running SQL seed');
-
-connection.query(seedQuery,err=>{
-    if(err){
-        throw err
-    }
-    console.log('Seed Complete');
-    connection.end()
-});
+// Call the run function to start the application
+run();
